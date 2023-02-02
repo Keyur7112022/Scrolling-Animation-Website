@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link   rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+    <body>
+
+        <header>
+            <a href="#" class="logo">logo</a>
+            <ul>
+                <li>
+                    <a href="#" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="#">Store</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">About us</a>
+                </li>
+                </ul>
+        </header>
+        <section>
+            <img src="./image/stars.png" id="stars">
+            <img src="./image/moon.png" id="moon">
+            <img src="./image/mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Moon Light</h2>
+            <a href="#sec" id="btn">Explore</a>    
+            <img src="./image/mountains_front.png" id="mountains_front">
+            </section>
+            <div class="sec" id="sec">
+                <h2>My Scrolling Effect</h2>
+                <p>In computer displays, filmmaking, television production, and other kinetic displays, scrolling is sliding text, images<br>or video across a monitor or display, vertically or horizontally. "Scrolling," as such, does not change the layout of<br>the text or pictures but moves (pans or tilts) the user's view across what is apparently a larger image that is not<br> wholly seen.[1] A common television and movie special effect is to scroll credits, while leaving the background<br>stationary. Scrolling may take place completely without user intervention (as in film credits) or, on an interactive<br> device, be triggered by touchscreen or a keypress and continue without further intervention until a further user action,<br> or be entirely controlled by input devices.
+<br>
+<br>
+                    Scrolling may take place in discrete increments (perhaps one or a few lines of text at a time),<br> or continuously (smooth scrolling). Frame rate is the speed at which an entire image is redisplayed. It is related to scrolling<br> in that changes to text and image position can only happen as often as the image can be redisplayed. When frame rate is a limiting<br> factor, one smooth scrolling technique is to blur images during movement that would otherwise appear to "jump".</p>
+            </div>  
+            <script>
+                let stars = document.getElementById('stars');
+                let moon = document.getElementById('moon');
+                let mountains_behind = document.getElementById('mountains_behind');
+                let text = document.getElementById('text');
+                let btn = document.getElementById('btn');
+                let mountains_front = document.getElementById('mountains_front');
+                let header = document.querySelector('header')
+
+                window.addEventListener('scroll',function(){
+                    let value = window.scrollY;
+                    stars.style.left= value * 0.25 + 'px';
+                    moon.style.top= value * 1.05 + 'px';
+                    mountains_behind.style.top= value * 0.05 + 'px';
+                    mountains_front.style.top= value * 0 + 'px';
+                    text.style.marginRight= value * 4 + 'px';
+                    text.style.marginTop= value * 1.5 + 'px';
+                    btn.style.marginTop= value * 1.5 + 'px';
+                    header.style.top=value * 0.5 + 'px';  
+                })
+            </script>
+    </body>
+</html>
